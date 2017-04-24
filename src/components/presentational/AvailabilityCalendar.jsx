@@ -5,7 +5,8 @@ import {days, months} from '../../data/timeUnits.nl.json'
 class AvailabilityCalendar extends React.Component {
 
   render() {
-    const availableDates = this.props.daysAvailable.map(dateString => new Date(dateString))
+    const daysAvailable = this.props.daysAvailable || []
+    const availableDates = daysAvailable.map(dateString => new Date(dateString))
 
     console.log(availableDates)
 
@@ -21,7 +22,7 @@ class AvailabilityCalendar extends React.Component {
 }
 
 AvailabilityCalendar.propTypes = {
-  daysAvailable: React.PropTypes.array.isRequired
+  daysAvailable: React.PropTypes.array
 }
 
 export default AvailabilityCalendar
