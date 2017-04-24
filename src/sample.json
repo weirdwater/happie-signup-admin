@@ -1,0 +1,26 @@
+{
+  "14523478239432-Maarten": {
+    "signup": {
+      "email": "maarten@haha.nl",
+      "phonenumber": "0612345678",
+      "name": "Maarten",
+      "surnamePrefix": "van",
+      "surname": "Bemmel",
+      "canTapBeer": true,
+      "hasTapLicense": false,
+      "isBHVCertified": true,
+      "hasFirstAidCertificate": true,
+      "pastExperience": "Gewerkt in een spoelkeuken van mijn 15e tot 18e.\nOok ervaring met tappen bij de vereniging.",
+      "positions": [
+        "spoelShift",
+        "barShift"
+      ],
+      "daysAvailable": [
+        "2017-05-03",
+        "2017-05-18",
+        "2017-05-23"
+      ],
+      "availabillityComments": ""
+    }
+  }
+}
