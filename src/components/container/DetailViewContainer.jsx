@@ -13,6 +13,7 @@ class DetailViewContainer extends React.Component {
 
     this.toggleContacted = this.toggleContacted.bind(this)
     this.toggleProcessed = this.toggleProcessed.bind(this)
+    this.deleteParticipant = this.deleteParticipant.bind(this)
 
     this.state = {
       id: this.props.match.params.id,
@@ -45,11 +46,18 @@ class DetailViewContainer extends React.Component {
     this.setState({participant: nextParticipant})
   }
 
+  deleteParticipant() {
+    const {participant} = this.state
+    const hidden = true
+    const nextParticipant = Object.assign({}, participant, {hidden})
+    this.setState({participant: nextParticipant})
+  }
+
   render() {
 
     const noData = Object.keys(this.state.participant).length === 0
 
-    if (noData) {
+    if (noData || this.state.participant.hidden) {
       return (
         <div>
           <h1>Geen aanmelding gevonden voor {this.state.id}</h1>
@@ -64,7 +72,7 @@ class DetailViewContainer extends React.Component {
     return (
       <div className={styles.container}>
         <Breadcrumbs className={styles.breadcrumbs} path={[{title: 'Aanmeldingen', url: '/'}, {title: fullname, url: `/${this.state.id}`}]} />
-        <ParticipantDetails toggleProcessed={this.toggleProcessed} toggleContacted={this.toggleContacted} className={styles.details} participant={this.state.participant} />
+        <ParticipantDetails deleteParticipant={this.deleteParticipant} toggleProcessed={this.toggleProcessed} toggleContacted={this.toggleContacted} className={styles.details} participant={this.state.participant} />
         <AvailabilityCalendar className={styles.calendar} daysAvailable={this.state.participant.signup.daysAvailable} />
       </div>
     )

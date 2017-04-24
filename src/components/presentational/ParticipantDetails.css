@@ -13,9 +13,29 @@
 .action {
     display: block;
     font-size: 1.25em;
-    margin: .3em 0 .3em;
+    margin: 1em 0 1em;
 }
 
+.deleteButton {
+    width: 100%;
+    font-size: 1.25em;
+    font-weight: 300;
+    padding: .5em;
+    border-radius: 5px;
+    border: 1px solid #d00;
+    color: #d00;
+    background-color: #fff;
+}
+
+.deleteButton:hover {
+    background-color: #d00;
+    color: #fff;
+}
+
+.deleteButton:active {
+    background-color: #a00;
+    border-color: #a00;
+}
 
 .detailsList dt {
     font-weight: 600;

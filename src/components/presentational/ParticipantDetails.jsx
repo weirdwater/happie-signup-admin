@@ -3,6 +3,13 @@ import styles from './ParticipantDetails.css'
 import PositionList from './PositionList'
 
 class ParticipantDetails extends React.Component {
+
+  handleDeleteButton() {
+    if (confirm('Weet je zeker dat je deze aanmelding wilt verwijderen?')) {
+      this.props.deleteParticipant()
+    }
+  }
+
   render() {
     const participant = this.props.participant
     const signup = participant.signup
@@ -18,6 +25,7 @@ class ParticipantDetails extends React.Component {
           <label className={styles.action}>
             <input name="processed" type="checkbox" checked={participant.processed} onChange={this.props.toggleProcessed}/> Verwerkt in planning
           </label>
+          <button className={styles.deleteButton} type="button" onClick={() => this.handleDeleteButton()}>Verwijder aanmelding</button>
         </div>
         <div className={styles.details}>
           <dl className={styles.detailsList}>
@@ -47,6 +55,7 @@ class ParticipantDetails extends React.Component {
 
 ParticipantDetails.propTypes = {
   participant: React.PropTypes.object.isRequired,
+  deleteParticipant: React.PropTypes.func.isRequired,
   toggleContacted: React.PropTypes.func.isRequired,
   toggleProcessed: React.PropTypes.func.isRequired
 }

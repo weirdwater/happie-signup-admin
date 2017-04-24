@@ -40,7 +40,13 @@ class ParticipantsTable extends React.Component {
           <th>Functies</th>
         </tr>
         </tbody>
-        {Object.keys(participants).map(key => this.renderParticipant(participants[key], key))}
+        {Object.keys(participants).map(key => {
+          const participant = participants[key]
+          if (!participant.hidden) {
+            return this.renderParticipant(participant, key)
+          }
+          return ''
+        })}
       </table>
     )
   }

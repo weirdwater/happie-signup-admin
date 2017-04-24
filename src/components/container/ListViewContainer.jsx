@@ -28,9 +28,6 @@ class ListViewContainer extends React.Component {
     return (
       <div>
         <h1>Aanmeldingen</h1>
-        <table>
-
-        </table>
         <ParticipantsTable participants={this.state.participants} {...this.props} />
       </div>
     )
