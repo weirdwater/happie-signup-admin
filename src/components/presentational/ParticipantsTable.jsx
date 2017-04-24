@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './ParticipantsTable.css'
-import positionsData from '../../data/positions.json'
-import Position from '../presentational/Position'
+import PositionList from './PositionList'
 
 class ParticipantsTable extends React.Component {
 
@@ -18,7 +17,7 @@ class ParticipantsTable extends React.Component {
         <td>{signup.wantsCalls ? 'Ja' : 'Nee'}</td>
         <td>{contacted ? 'Ja' : 'Nee'}</td>
         <td>{processed ? 'Ja' : 'Nee'}</td>
-        <td>{positions.map(positionName => <Position key={positionName} position={positionsData[positionName]}/>)}</td>
+        <td><PositionList positions={positions}/></td>
       </tr>
       </tbody>
     )

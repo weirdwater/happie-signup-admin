@@ -1,0 +1,14 @@
+.list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.list li {
+    display: inline-block;
+    margin-right: .3em;
+}
+
+.list li:last-of-type {
+    margin-right: 0;
+}

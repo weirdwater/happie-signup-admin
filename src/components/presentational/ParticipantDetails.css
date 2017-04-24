@@ -1,0 +1,16 @@
+.otherProperties {
+    padding: 0;
+    list-style: 0;
+}
+
+.otherProperties li {
+    display: inline-block;
+    background-color: #E8E8E8;
+    padding: .3em .3em .5em;
+    margin: 1.5em .3em 1.5em 0;
+    border-radius: 5px;
+}
+
+.otherProperties li:last-of-type {
+    margin-right: 0;
+}
