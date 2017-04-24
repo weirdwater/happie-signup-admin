@@ -10,21 +10,21 @@ class ParticipantDetails extends React.Component {
 
     return (
       <section>
-        <h1>{signup.name} {signup.surnameprefix} {signup.surname}</h1>
-        <div>
-          <label>
+        <h1 className={styles.name}>{signup.name} {signup.surnamePrefix} {signup.surname}</h1>
+        <div className={styles.adminActions}>
+          <label className={styles.action}>
             <input type="checkbox" value={participant.contacted}/> Contact opgenomen
           </label>
-          <label>
+          <label className={styles.action}>
             <input type="checkbox" value={participant.processed}/> Verwerkt in planning
           </label>
         </div>
-        <div>
-          <dl>
+        <div className={styles.details}>
+          <dl className={styles.detailsList}>
             <dt>E-mailadres</dt>
-            <dd>{signup.email}</dd>
+            <dd className={styles.email} >{signup.email}</dd>
             <dt>Telefoonnummer</dt>
-            <dd>{signup.phonenumber}</dd>
+            <dd className={styles.phonenumber}>{signup.phonenumber}</dd>
             <dt>Functies</dt>
             <dd><PositionList positions={positions} /></dd>
             <dt>Opmerkingen Beschikbaarheid</dt>

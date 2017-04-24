@@ -1,13 +1,47 @@
+.name {
+    margin-left: .5em;
+}
+
+.adminActions,
+.details {
+    border: 1px solid #95989A;
+    border-radius: 5px;
+    padding: .5em;
+    margin-bottom: .5em;
+}
+
+.action {
+    display: block;
+    font-size: 1.25em;
+    margin: .3em 0 .3em;
+}
+
+
+.detailsList dt {
+    font-weight: 600;
+    margin-bottom: .1em;
+}
+
+.detailsList dd {
+    margin: 0 0 1em;
+}
+
+.email,
+.phonenumber {
+    font-size: 1.25em;
+}
+
 .otherProperties {
     padding: 0;
-    list-style: 0;
+    margin: 0;
+    list-style: none;
 }
 
 .otherProperties li {
     display: inline-block;
     background-color: #E8E8E8;
     padding: .3em .3em .5em;
-    margin: 1.5em .3em 1.5em 0;
+    margin: .15em .3em .15em 0;
     border-radius: 5px;
 }
 

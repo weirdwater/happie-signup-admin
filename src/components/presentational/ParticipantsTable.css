@@ -1,5 +1,6 @@
 .table {
     border-collapse: collapse;
+    font-weight: 400;
 }
 
 .table td, .table th {
