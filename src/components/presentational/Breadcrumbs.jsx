@@ -6,7 +6,7 @@ const Breadcrumbs = (props) => {
   const path = props.path || []
   console.log(path)
   return (
-    <div>
+    <div className={props.className}>
       <ul className={styles.path}>
         {path.map(page => {
           return <li key={page.title} className={styles.page}><Link to={page.url}>{page.title}</Link></li>

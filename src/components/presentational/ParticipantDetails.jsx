@@ -9,7 +9,7 @@ class ParticipantDetails extends React.Component {
     const positions = signup.position || []
 
     return (
-      <section>
+      <section className={this.props.className}>
         <h1 className={styles.name}>{signup.name} {signup.surnamePrefix} {signup.surname}</h1>
         <div className={styles.adminActions}>
           <label className={styles.action}>

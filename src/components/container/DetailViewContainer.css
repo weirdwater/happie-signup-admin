@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: .5em;
+}
+
+.breadcrumbs {
+    flex: 1 0 100%;
+    margin-bottom: 1em;
+}
+
+.details {
+    flex: 1 0 0;
+}
+
+.calendar {
+    flex: 3 0 0;
+}

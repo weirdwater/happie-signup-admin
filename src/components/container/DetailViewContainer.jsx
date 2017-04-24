@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import base from '../../base'
+import styles from './DetailViewContainer.css'
 import ParticipantDetails from '../presentational/ParticipantDetails'
 import AvailabilityCalendar from '../presentational/AvailabilityCalendar'
 import Breadcrumbs from '../presentational/Breadcrumbs'
@@ -44,10 +45,10 @@ class DetailViewContainer extends React.Component {
     const fullname = `${participant.signup.name} ${participant.signup.surnamePrefix || ''} ${participant.signup.surname || ''}`
 
     return (
-      <div>
-        <Breadcrumbs path={[{title: 'Aanmeldingen', url: '/'}, {title: fullname, url: `/${this.state.id}`}]} />
-        <ParticipantDetails participant={this.state.participant} />
-        <AvailabilityCalendar/>
+      <div className={styles.container}>
+        <Breadcrumbs className={styles.breadcrumbs} path={[{title: 'Aanmeldingen', url: '/'}, {title: fullname, url: `/${this.state.id}`}]} />
+        <ParticipantDetails className={styles.details} participant={this.state.participant} />
+        <AvailabilityCalendar className={styles.calendar}/>
       </div>
     )
   }
