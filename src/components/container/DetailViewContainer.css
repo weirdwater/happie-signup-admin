@@ -18,3 +18,10 @@
     flex: 3 0 0;
     margin-left: 1em;
 }
+
+@media screen and (max-width: 650px) {
+    .details,
+    .calendar {
+        flex: 1 0 100%;
+    }
+}
