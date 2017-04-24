@@ -1,5 +1,8 @@
 import React from 'react'
 import base from '../../base'
+import positionsData from '../../data/positions.json'
+import Position from '../presentational/Position'
+import ParticipantsTable from '../presentational/ParticipantsTable'
 
 class ListViewContainer extends React.Component {
 
@@ -23,33 +26,14 @@ class ListViewContainer extends React.Component {
     base.removeBinding(this.ref)
   }
 
-  renderParticipant(participant, key) {
-    const {signup} = participant
-
-    return (
-      <tbody key={key}>
-        <tr>
-          <td>{signup.name} {signup.surnamePrefix} {signup.surname}</td>
-          <td>{signup.email}</td>
-          <td>{signup.phonenumber}</td>
-        </tr>
-      </tbody>
-    )
-  }
-
   render() {
     return (
       <div>
+        <h1>Aanmeldingen</h1>
         <table>
-          <tbody>
-            <tr>
-              <th>Naam</th>
-              <th>E-mailadres</th>
-              <th>Telefoonnummer</th>
-            </tr>
-          </tbody>
-          {Object.keys(this.state.participants).map(key => this.renderParticipant(this.state.participants[key], key))}
+
         </table>
+        <ParticipantsTable participants={this.state.participants} />
       </div>
     )
   }

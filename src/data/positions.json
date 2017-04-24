@@ -1,0 +1,26 @@
+{
+  "barShift": {
+    "label": "Bar",
+    "color": "#9300FF"
+  },
+  "keukenShift1": {
+    "label": "Keuken Shift 1",
+    "color": "#f00"
+  },
+  "keukenShift2": {
+    "label": "Keuken Shift 2",
+    "color": "#f00"
+  },
+  "bedieningShift1": {
+    "label": "Bediening Shift 1",
+    "color": "#21C672"
+  },
+  "bedieningShift2": {
+    "label": "Bediening Shift 2",
+    "color": "#21C672"
+  },
+  "spoelShift": {
+    "label": "Spoel Shift",
+    "color": "#1E93F7"
+  }
+}
