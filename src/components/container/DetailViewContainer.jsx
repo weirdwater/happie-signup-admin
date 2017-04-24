@@ -48,7 +48,7 @@ class DetailViewContainer extends React.Component {
       <div className={styles.container}>
         <Breadcrumbs className={styles.breadcrumbs} path={[{title: 'Aanmeldingen', url: '/'}, {title: fullname, url: `/${this.state.id}`}]} />
         <ParticipantDetails className={styles.details} participant={this.state.participant} />
-        <AvailabilityCalendar className={styles.calendar}/>
+        <AvailabilityCalendar className={styles.calendar} daysAvailable={this.state.participant.signup.daysAvailable} />
       </div>
     )
   }
