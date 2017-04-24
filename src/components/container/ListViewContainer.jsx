@@ -1,7 +1,5 @@
 import React from 'react'
 import base from '../../base'
-import positionsData from '../../data/positions.json'
-import Position from '../presentational/Position'
 import ParticipantsTable from '../presentational/ParticipantsTable'
 
 class ListViewContainer extends React.Component {

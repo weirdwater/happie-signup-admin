@@ -13,7 +13,7 @@ class AvailabilityCalendar extends React.Component {
     return (
       <section className={this.props.className}>
         <h1>Beschikbaarheid</h1>
-        <ul>
+        <ul className={styles.availableDays}>
           {availableDates.map((date, key) => <li key={key}>{days[date.getDay()]} {date.getDate()} {months[date.getMonth()]} {date.getFullYear()}</li>)}
         </ul>
       </section>
