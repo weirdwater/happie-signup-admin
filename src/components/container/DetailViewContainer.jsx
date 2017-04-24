@@ -11,6 +11,9 @@ class DetailViewContainer extends React.Component {
   constructor(props) {
     super(props)
 
+    this.toggleContacted = this.toggleContacted.bind(this)
+    this.toggleProcessed = this.toggleProcessed.bind(this)
+
     this.state = {
       id: this.props.match.params.id,
       participant: {}
@@ -26,6 +29,20 @@ class DetailViewContainer extends React.Component {
 
   componentWillUnmount() {
     base.removeBinding(this.ref)
+  }
+
+  toggleContacted() {
+    const {participant} = this.state
+    const contacted = !participant.contacted
+    const nextParticipant = Object.assign({}, participant, {contacted})
+    this.setState({participant: nextParticipant})
+  }
+
+  toggleProcessed() {
+    const {participant} = this.state
+    const processed = !participant.processed
+    const nextParticipant = Object.assign({}, participant, {processed})
+    this.setState({participant: nextParticipant})
   }
 
   render() {
@@ -47,7 +64,7 @@ class DetailViewContainer extends React.Component {
     return (
       <div className={styles.container}>
         <Breadcrumbs className={styles.breadcrumbs} path={[{title: 'Aanmeldingen', url: '/'}, {title: fullname, url: `/${this.state.id}`}]} />
-        <ParticipantDetails className={styles.details} participant={this.state.participant} />
+        <ParticipantDetails toggleProcessed={this.toggleProcessed} toggleContacted={this.toggleContacted} className={styles.details} participant={this.state.participant} />
         <AvailabilityCalendar className={styles.calendar} daysAvailable={this.state.participant.signup.daysAvailable} />
       </div>
     )

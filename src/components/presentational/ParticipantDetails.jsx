@@ -13,10 +13,10 @@ class ParticipantDetails extends React.Component {
         <h1 className={styles.name}>{signup.name} {signup.surnamePrefix} {signup.surname}</h1>
         <div className={styles.adminActions}>
           <label className={styles.action}>
-            <input type="checkbox" value={participant.contacted}/> Contact opgenomen
+            <input name="contacted" type="checkbox" checked={participant.contacted} onChange={this.props.toggleContacted}/> Contact opgenomen
           </label>
           <label className={styles.action}>
-            <input type="checkbox" value={participant.processed}/> Verwerkt in planning
+            <input name="processed" type="checkbox" checked={participant.processed} onChange={this.props.toggleProcessed}/> Verwerkt in planning
           </label>
         </div>
         <div className={styles.details}>
@@ -46,7 +46,9 @@ class ParticipantDetails extends React.Component {
 }
 
 ParticipantDetails.propTypes = {
-  participant: React.PropTypes.object.isRequired
+  participant: React.PropTypes.object.isRequired,
+  toggleContacted: React.PropTypes.func.isRequired,
+  toggleProcessed: React.PropTypes.func.isRequired
 }
 
 export default ParticipantDetails
