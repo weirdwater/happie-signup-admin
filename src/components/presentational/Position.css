@@ -4,7 +4,7 @@
     color: #fff;
     padding: .2em .3em;
     border-radius: 5px;
-    margin-right: .3em;
+    margin: .15em .3em .15em 0;
 }
 
 .pill:last-of-type {

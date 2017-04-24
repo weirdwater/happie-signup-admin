@@ -33,7 +33,7 @@ class ListViewContainer extends React.Component {
         <table>
 
         </table>
-        <ParticipantsTable participants={this.state.participants} />
+        <ParticipantsTable participants={this.state.participants} {...this.props} />
       </div>
     )
   }

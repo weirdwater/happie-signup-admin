@@ -9,12 +9,9 @@ class ParticipantsTable extends React.Component {
     const {signup, contacted, processed} = participant
 
     const positions = signup.position || []
-    console.group(signup.name)
-    console.log(signup.wantsCalls)
-    console.groupEnd(signup.name)
     return (
-      <tbody key={key}>
-      <tr>
+      <tbody key={key} className={styles.rowContainer} onClick={() => this.props.history.push(`/${key}`)} >
+      <tr className={styles.row}>
         <td>{signup.name} {signup.surnamePrefix} {signup.surname}</td>
         <td>{signup.email}</td>
         <td>{signup.phonenumber}</td>

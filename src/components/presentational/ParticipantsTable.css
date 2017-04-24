@@ -1,3 +1,21 @@
 .table {
+    border-collapse: collapse;
+}
 
+.table td, .table th {
+    border-bottom: 1px solid #E8E8E8;
+    padding: .3em;
+    vertical-align: middle;
+}
+
+.rowContainer:last-of-type td {
+    border: none;
+}
+
+.row {
+    transition: .2s;
+}
+
+.row:hover {
+    background-color: #E8E8E8;
 }
