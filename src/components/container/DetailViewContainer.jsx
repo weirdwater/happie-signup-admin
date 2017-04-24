@@ -1,6 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import base from '../../base'
+import ParticipantDetails from '../presentational/ParticipantDetails'
+import AvailabilityCalendar from '../presentational/AvailabilityCalendar'
+import Breadcrumbs from '../presentational/Breadcrumbs'
 
 class DetailViewContainer extends React.Component {
 
@@ -37,11 +40,14 @@ class DetailViewContainer extends React.Component {
       )
     }
 
-    const {participant} = this.state
+    const participant = this.state.participant
+    const fullname = `${participant.signup.name} ${participant.signup.surnamePrefix || ''} ${participant.signup.surname || ''}`
 
     return (
       <div>
-        <h1>{participant.signup.name} {participant.signup.surnameprefix} {participant.signup.surname}</h1>
+        <Breadcrumbs path={[{title: 'Aanmeldingen', url: '/'}, {title: fullname, url: `/${this.state.id}`}]} />
+        <ParticipantDetails participant={this.state.participant} />
+        <AvailabilityCalendar/>
       </div>
     )
   }

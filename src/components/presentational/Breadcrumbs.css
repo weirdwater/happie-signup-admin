@@ -1,0 +1,21 @@
+.path {
+    padding: .3em .3em .5em;
+    border-radius: 5px;
+    list-style: none;
+    background-color: #E8E8E8;
+    display: inline-block;
+}
+
+.page {
+    display: inline-block;
+    margin-right: .3em;
+}
+
+.page:after {
+    content: '/';
+    margin-left: .3em;
+}
+
+.page:last-of-type:after {
+    display: none;
+}
