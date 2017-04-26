@@ -1,0 +1,31 @@
+.thisMonthDate {
+    color: #000;
+}
+
+.otherMonthDate {
+    color: #aaa;
+}
+
+.day {
+    background-color: #F4F4F4;
+
+}
+
+.availableDay {
+    composes: day;
+    background-color: #A8FF98;
+}
+
+.table {
+    box-sizing: border-box;
+    width: 100%;
+    border-spacing: .5em;
+}
+
+.table td {
+    width: 14%;
+    height: 85px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.5em;
+}

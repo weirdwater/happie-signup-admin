@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom'
 
 const Breadcrumbs = (props) => {
   const path = props.path || []
-  console.log(path)
   return (
     <div className={props.className}>
       <ul className={styles.path}>
