@@ -14,7 +14,7 @@ class AvailabilityCalendar extends React.Component {
     this.state = {
       month: 4,
       year: 2017,
-      daysAvailable: this.props.daysAvailable
+      daysAvailable: this.props.daysAvailable || []
     }
   }
 
