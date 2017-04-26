@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './AvailablilityCalendar.css'
-import {days, months} from '../../data/timeUnits.nl.json'
+import {months} from '../../data/timeUnits.nl.json'
 
 class AvailabilityCalendar extends React.Component {
 
@@ -36,11 +36,6 @@ class AvailabilityCalendar extends React.Component {
   static generateDatesForMonth(firstOfMonth) {
     const days = []
     const nextMonth = firstOfMonth.getMonth() + 1
-    const lastOfMonth = new Date(
-      firstOfMonth.getFullYear(),
-      firstOfMonth.getMonth() + 1,
-      0
-    )
 
     let monthCompleted = false;
     let date = AvailabilityCalendar.getSunday(firstOfMonth)
@@ -81,7 +76,6 @@ class AvailabilityCalendar extends React.Component {
   }
 
   render() {
-    const daysAvailable = this.props.daysAvailable || []
     const {year, month} = this.state
     const days = AvailabilityCalendar.generateDatesForMonth(new Date(year, month))
     const weeks = []
