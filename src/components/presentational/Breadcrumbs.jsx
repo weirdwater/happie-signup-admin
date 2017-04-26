@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './Breadcrumbs.css'
 import {Link} from 'react-router-dom'
 
@@ -16,7 +17,7 @@ const Breadcrumbs = (props) => {
 }
 
 Breadcrumbs.propTypes = {
-  path: React.PropTypes.array
+  path: PropTypes.array
 }
 
 export default Breadcrumbs

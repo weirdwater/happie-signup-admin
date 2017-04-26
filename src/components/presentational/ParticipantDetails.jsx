@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './ParticipantDetails.css'
 import PositionList from './PositionList'
 
@@ -54,10 +55,10 @@ class ParticipantDetails extends React.Component {
 }
 
 ParticipantDetails.propTypes = {
-  participant: React.PropTypes.object.isRequired,
-  deleteParticipant: React.PropTypes.func.isRequired,
-  toggleContacted: React.PropTypes.func.isRequired,
-  toggleProcessed: React.PropTypes.func.isRequired
+  participant: PropTypes.object.isRequired,
+  deleteParticipant: PropTypes.func.isRequired,
+  toggleContacted: PropTypes.func.isRequired,
+  toggleProcessed: PropTypes.func.isRequired
 }
 
 export default ParticipantDetails

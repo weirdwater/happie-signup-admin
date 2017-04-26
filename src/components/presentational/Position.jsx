@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './Position.css'
 
 const Position = (props) => {
@@ -9,7 +10,7 @@ const Position = (props) => {
 }
 
 Position.propTypes = {
-  position: React.PropTypes.object
+  position: PropTypes.object
 }
 
 export default Position

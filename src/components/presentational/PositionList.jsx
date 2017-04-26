@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Position from './Position'
 import positionsData from '../../data/positions.json'
 import styles from './PositionList.css'
@@ -18,7 +19,7 @@ const PositionList = (props) => {
 }
 
 PositionList.propTypes = {
-  positions: React.PropTypes.array
+  positions: PropTypes.array
 }
 
 export default PositionList

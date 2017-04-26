@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './ParticipantsTable.css'
 import PositionList from './PositionList'
 
@@ -52,7 +53,7 @@ class ParticipantsTable extends React.Component {
   }
 }
 ParticipantsTable.propTypes = {
-  participants: React.PropTypes.object.isRequired
+  participants: PropTypes.object.isRequired
 }
 
 export default ParticipantsTable

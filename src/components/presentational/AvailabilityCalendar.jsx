@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './AvailablilityCalendar.css'
 import {days, months} from '../../data/timeUnits.nl.json'
 
@@ -115,7 +116,7 @@ class AvailabilityCalendar extends React.Component {
 }
 
 AvailabilityCalendar.propTypes = {
-  daysAvailable: React.PropTypes.array
+  daysAvailable: PropTypes.array
 }
 
 export default AvailabilityCalendar
