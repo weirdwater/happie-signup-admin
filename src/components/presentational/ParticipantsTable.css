@@ -16,6 +16,7 @@
 .row {
     transition: .2s;
     color: #aaaaaa;
+    cursor: pointer;
 }
 
 .row[data-completed="true"] {
