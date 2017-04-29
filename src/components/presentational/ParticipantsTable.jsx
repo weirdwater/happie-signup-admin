@@ -8,18 +8,20 @@ class ParticipantsTable extends React.Component {
   renderParticipant(participant, key) {
     const {signup, contacted, processed} = participant
 
+    const completed = participant.signup.position !== undefined && participant.signup.daysAvailable !== undefined
+
     const positions = signup.position || []
     return (
       <tbody key={key} className={styles.rowContainer} onClick={() => this.props.history.push(`/${key}`)} >
-      <tr className={styles.row}>
-        <td>{signup.name} {signup.surnamePrefix} {signup.surname}</td>
-        <td>{signup.email}</td>
-        <td>{signup.phonenumber}</td>
-        <td>{signup.wantsCalls ? 'Ja' : 'Nee'}</td>
-        <td>{contacted ? 'Ja' : 'Nee'}</td>
-        <td>{processed ? 'Ja' : 'Nee'}</td>
-        <td><PositionList positions={positions}/></td>
-      </tr>
+        <tr className={styles.row} data-completed={completed}>
+          <td>{signup.name} {signup.surnamePrefix} {signup.surname}</td>
+          <td>{signup.email}</td>
+          <td>{signup.phonenumber}</td>
+          <td>{signup.wantsCalls ? 'Ja' : 'Nee'}</td>
+          <td>{contacted ? 'Ja' : 'Nee'}</td>
+          <td>{processed ? 'Ja' : 'Nee'}</td>
+          <td><PositionList positions={positions}/></td>
+        </tr>
       </tbody>
     )
   }

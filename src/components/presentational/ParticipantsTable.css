@@ -15,6 +15,11 @@
 
 .row {
     transition: .2s;
+    color: #aaaaaa;
+}
+
+.row[data-completed="true"] {
+    color: #000;
 }
 
 .row:hover {
