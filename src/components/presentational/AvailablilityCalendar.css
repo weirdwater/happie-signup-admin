@@ -29,3 +29,7 @@
     text-align: center;
     font-size: 1.5em;
 }
+
+.table th {
+    text-transform: capitalize;
+}

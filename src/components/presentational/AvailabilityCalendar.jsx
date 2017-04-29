@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './AvailablilityCalendar.css'
-import {months} from '../../data/timeUnits.nl.json'
+import {days, months} from '../../data/timeUnits.nl.json'
 
 class AvailabilityCalendar extends React.Component {
 
@@ -77,13 +77,13 @@ class AvailabilityCalendar extends React.Component {
 
   render() {
     const {year, month} = this.state
-    const days = AvailabilityCalendar.generateDatesForMonth(new Date(year, month))
+    const allDays = AvailabilityCalendar.generateDatesForMonth(new Date(year, month))
     const weeks = []
-    while (days[0]) {
-      if (days.length % 7 === 0) {
+    while (allDays[0]) {
+      if (allDays.length % 7 === 0) {
         weeks.push([])
       }
-      weeks[weeks.length -1].push(days.shift())
+      weeks[weeks.length -1].push(allDays.shift())
     }
 
     return (
@@ -93,13 +93,7 @@ class AvailabilityCalendar extends React.Component {
         <table className={styles.table}>
           <tbody>
           <tr>
-            <th>Zondag</th>
-            <th>Maandag</th>
-            <th>Dinsdag</th>
-            <th>Woensdag</th>
-            <th>Donderdag</th>
-            <th>Vrijdag</th>
-            <th>Zaterdag</th>
+            {days.map((day, index) => <th key={index}>{day}</th>)}
           </tr>
           </tbody>
           {weeks.map(this.renderWeek)}
