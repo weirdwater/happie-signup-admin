@@ -16,6 +16,7 @@ class DetailViewContainer extends React.Component {
     this.deleteParticipant = this.deleteParticipant.bind(this)
 
     this.state = {
+      loading: true,
       id: this.props.match.params.id,
       participant: {}
     }
@@ -24,7 +25,10 @@ class DetailViewContainer extends React.Component {
   componentWillMount() {
     this.ref = base.syncState(`${this.state.id}`, {
       context: this,
-      state: 'participant'
+      state: 'participant',
+      then() {
+        this.setState({loading: false})
+      }
     });
   }
 
@@ -55,11 +59,19 @@ class DetailViewContainer extends React.Component {
 
   render() {
 
+    if (this.state.loading) {
+      return (
+        <div className={styles.container}>
+          <h1 className={styles.loadingMessage}>Loading...</h1>
+        </div>
+      )
+    }
+
     const noData = Object.keys(this.state.participant).length === 0
 
     if (noData || this.state.participant.hidden) {
       return (
-        <div>
+        <div className={styles.container}>
           <h1>Geen aanmelding gevonden voor {this.state.id}</h1>
           <h2><Link to="/" >Terug naar overzicht</Link></h2>
         </div>
