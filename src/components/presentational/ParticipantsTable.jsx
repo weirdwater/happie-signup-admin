@@ -8,7 +8,7 @@ class ParticipantsTable extends React.Component {
   renderParticipant(participant, key) {
     const {signup, contacted, processed} = participant
 
-    const completed = participant.signup.position !== undefined && participant.signup.daysAvailable !== undefined
+    const completed = participant.signup.daysAvailable !== undefined
 
     const positions = signup.position || []
     return (
