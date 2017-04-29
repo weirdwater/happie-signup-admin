@@ -14,7 +14,7 @@ class ListViewContainer extends React.Component {
   }
 
   componentWillMount() {
-    this.ref = base.syncState('/', {
+    this.ref = base.bindToState('/', {
       context: this,
       state: 'participants'
     });
