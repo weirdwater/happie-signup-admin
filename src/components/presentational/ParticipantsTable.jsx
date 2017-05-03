@@ -5,8 +5,8 @@ import PositionList from './PositionList'
 
 class ParticipantsTable extends React.Component {
 
-  renderParticipant(participant, key) {
-    const {signup, contacted, processed} = participant
+  renderParticipant(participant) {
+    const {signup, contacted, processed, key} = participant
 
     const completed = participant.signup.daysAvailable !== undefined
 
@@ -26,9 +26,20 @@ class ParticipantsTable extends React.Component {
     )
   }
 
+  isNotHidden(participant) {
+    return !participant.hidden
+  }
+
   render() {
 
     const { participants } = this.props
+
+    const participantsList = Object.keys(participants)
+      .map(key => {
+        const participant = participants[key]
+        participant.key = key
+        return participant
+      })
 
     return (
       <table className={styles.table}>
@@ -43,13 +54,10 @@ class ParticipantsTable extends React.Component {
           <th>Functies</th>
         </tr>
         </tbody>
-        {Object.keys(participants).map(key => {
-          const participant = participants[key]
-          if (!participant.hidden) {
-            return this.renderParticipant(participant, key)
-          }
-          return ''
-        })}
+        {participantsList
+          .filter(this.isNotHidden)
+          .reverse()
+          .map(participant => this.renderParticipant(participant))}
       </table>
     )
   }
