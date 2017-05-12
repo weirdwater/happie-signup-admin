@@ -2,4 +2,26 @@
     max-width: 1074px;
     margin: 0 auto;
     padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.logout {
+    margin-left: auto;
+    font-size: .8em;
+    padding: .4em;
+    border: 1px solid #d00;
+    color: #d00;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.logout:hover {
+    background-color: #d00;
+    color: #fff;
+}
+
+.logout:active {
+    background-color: #a00;
+    border-color: #a00;
 }
