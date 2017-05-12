@@ -30,6 +30,19 @@ class ParticipantsTable extends React.Component {
     return !participant.hidden
   }
 
+  filterPositions(participant) {
+    const showPositions = []
+    // const showPositions = ['barShift', 'spoelShift', 'keukenShift1', 'keukenShift2', 'bedieningShift1', 'bedieningShift2']
+    if(showPositions.length) {
+      if (participant.signup && participant.signup.position) {
+        const appliedPositions = Array.from(participant.signup.position)
+        return showPositions.reduce((result, position) => appliedPositions.includes(position) ? true : result, false)
+      }
+      return false
+    }
+    return true
+  }
+
   render() {
 
     const { participants } = this.props
@@ -40,6 +53,8 @@ class ParticipantsTable extends React.Component {
         participant.key = key
         return participant
       })
+
+    // const justWantsCalls = true
 
     return (
       <table className={styles.table}>
@@ -56,6 +71,8 @@ class ParticipantsTable extends React.Component {
         </tbody>
         {participantsList
           .filter(this.isNotHidden)
+          // .filter(participant => !justWantsCalls || participant.signup.wantsCalls)
+          // .filter(this.filterPositions)
           .reverse()
           .map(participant => this.renderParticipant(participant))}
       </table>
