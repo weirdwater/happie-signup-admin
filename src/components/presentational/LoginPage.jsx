@@ -21,7 +21,8 @@ class LoginPage extends React.Component {
     }
 
     this.privilegedUsers = [
-      'HzLGQFfoy0PlbjCiTOntAv4VCNS2'
+      'HzLGQFfoy0PlbjCiTOntAv4VCNS2',
+      'hiaJTpy2QgPU7ntdeNhCyjtBE383'
     ]
   }
 
