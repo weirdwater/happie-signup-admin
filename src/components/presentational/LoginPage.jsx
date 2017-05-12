@@ -43,7 +43,7 @@ class LoginPage extends React.Component {
   }
 
   authHandler(error, user) {
-    const nextState = {authenticating: false}
+    const nextState = {authenticating: false, showNotPrivileged: false, error: false}
 
     if (error) {
       console.debug(error)
