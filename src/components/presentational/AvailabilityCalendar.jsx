@@ -69,8 +69,14 @@ class AvailabilityCalendar extends React.Component {
 
   renderDay(date, index) {
     const mainMonth = date.getMonth() === this.state.month
+    const isToday = AvailabilityCalendar.isSameDate(date, new Date())
     const isAvailable = this.state.daysAvailable.find(day => day === this.dateString(date))
-    return <td key={index} className={isAvailable ? styles.availableDay : styles.day} >
+
+    const boxClasses = [
+      isAvailable ? styles.availableDay : styles.day,
+      isToday ? styles.today : ''
+    ]
+    return <td key={index} className={boxClasses.join(' ')} >
       <span className={mainMonth ? styles.thisMonthDate : styles.otherMonthDate}>{date.getDate()}</span>
     </td>
   }

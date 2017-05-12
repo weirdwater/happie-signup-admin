@@ -33,3 +33,7 @@
 .table th {
     text-transform: capitalize;
 }
+
+.today {
+    border: 2px solid #d00;
+}
