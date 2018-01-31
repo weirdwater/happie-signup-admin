@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './LoginPage.css'
 import base from '../../base'
+import * as config from '../../config'
 
 class LoginPage extends React.Component {
 
@@ -20,10 +21,7 @@ class LoginPage extends React.Component {
       uid: ''
     }
 
-    this.privilegedUsers = [
-      'HzLGQFfoy0PlbjCiTOntAv4VCNS2',
-      'hiaJTpy2QgPU7ntdeNhCyjtBE383'
-    ]
+    this.privilegedUsers = [...config.privilegedUserIds]
   }
 
   componentWillMount() {
