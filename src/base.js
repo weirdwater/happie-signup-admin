@@ -1,9 +1,6 @@
 import Rebase from 're-base';
+import * as config from './config'
 
-const base = new Rebase.createClass({
-  apiKey: "AIzaSyCs9KkyhIdkXBwTEWktbgQbewq-gSDOtRA",
-  authDomain: "happietaria-43061.firebaseapp.com",
-  databaseURL: "https://happietaria-43061.firebaseio.com",
-});
+const base = new Rebase.createClass(config.firebase);
 
 export default base;
